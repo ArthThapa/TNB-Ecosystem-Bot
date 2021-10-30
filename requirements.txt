@@ -1,2 +1,4 @@
-py-cord==1.7.3
-pysondb==1.4.0
+discord==1.7.3
+discord-py-interactions==3.0.2
+python-dotenv==0.19.1
+tinydb==4.5.2

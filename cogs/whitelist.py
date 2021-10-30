@@ -1,6 +1,4 @@
 import discord
-from discord import colour
-from discord import guild
 from discord.ext import commands
 from discord_slash import cog_ext
 from discord_slash.utils.manage_commands import create_option
@@ -24,7 +22,7 @@ class whitelist(commands.Cog):
             if db.search(server.server_id == inv.guild.id):
                 await ctx.send("Already Whitelisted")
             else:
-                db.insert({'server_id': inv.guild.id, 'server_name': inv.guild.name})
+                db.insert({'server_id': inv.guild.id, 'server_name': inv.guild.name.lower()})
                 await ctx.send("Server successfully whitelisted")
         except not_found:
             await ctx.send("Unknown Invite!")
@@ -47,7 +45,7 @@ class whitelist(commands.Cog):
             embed = discord.Embed(title="List of Whitlisted Servers", description="List of Whitlisted Servers with server IDs", colour=discord.Color.blue())
 
             for i in db.all()[:8]:
-                embed.add_field(name=i["server_name"], value=i["server_id"], inline=False)
+                embed.add_field(name=i["server_name"].capitalize(), value=i["server_id"], inline=False)
 
         else:
             embed = discord.Embed(title="No Whitelisted servers!!", description="No whitelisted servers as of now, check back later", colour=discord.Color.blue())

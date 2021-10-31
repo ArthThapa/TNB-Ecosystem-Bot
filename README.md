@@ -9,11 +9,13 @@
 TNB Ecosystem bot is a utility discord bot for auto moderation of discord links and serves as a projects API wrapper for discord.
 
 #### Contributing
-Clone the repo.
+- Clone the repo.
 
-Install all the requirements using `pip install -r requirements.txt`
+- Install all the requirements using `pip install -r requirements.txt`
 
-Set the required environment variables.
+- Make a .env file in the root folder.
+
+- Set the required environment variables.
 ```shell
 TNB_DISCORD_TOKEN = "Discord Bot Token" (string type)
 SUPERUSERS = Discord IDs of SUPERUSERS in a list , ids should be (integer) type, ex:- [Id of SUPERUSER1, Id of SUPERUSER2, etc.]

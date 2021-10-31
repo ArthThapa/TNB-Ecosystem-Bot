@@ -7,8 +7,6 @@ import requests
 from DiscordUtils.Pagination import AutoEmbedPaginator
 
 
-guild_ids = [903702324332101643]
-
 class projects(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -28,7 +26,6 @@ class projects(commands.Cog):
             pagination_list = []
 
             for i in raw:
-                page = 1
                 embed = discord.Embed(name="TNB Projects", description="TNB Projects", colour=discord.Colour.blue())
                 for j in i:
                     embed.add_field(name=f"{j['title']}", value=f"{j['project_lead_display_name']}", inline=False)
@@ -58,7 +55,7 @@ class projects(commands.Cog):
                     embed.add_field(name="Problem", value=f"{project['problem']}")
                     embed.add_field(name="Benefits", value=f"{project['benefits']}")
 
-                    embed.set_image(url=project["logo"])
+                    embed.set_author(name=f"{project['project_lead_display_name']}", url=f"{project['github_url']}", icon_url=f"{project['logo']}")
                     break
 
             if found:

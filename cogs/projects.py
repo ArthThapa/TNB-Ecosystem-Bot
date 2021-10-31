@@ -33,7 +33,10 @@ class projects(commands.Cog):
                 pagination_list.append(embed)
 
             paginator = AutoEmbedPaginator(ctx)
-            await paginator.run(pagination_list)    
+            await paginator.run(pagination_list)
+
+        else:
+            await ctx.send("Oh no, seems like something's wrong in the backend.") 
 
     @cog_ext.cog_subcommand(base="project", name="show", description="Know more about a specifc TNB project", options=[create_option(name="project_name", option_type=3, required=True, description="Name of TNB project (Should be precise)")])
     async def project_show(self, ctx, project_name):

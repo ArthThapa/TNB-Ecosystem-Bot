@@ -29,7 +29,7 @@ BOT_MANAGER_ID = Discord ID of the Bot manager/developer, Bot manager has access
 `/whitelist all`: Show all the servers in the whitelist.    <br />
 
 `/project all`: List of all TNB Projects  <br />
-`/project show <project name>`: Know more about a specific project (PROJECT NAME SHOULD PRECISELY ACCURATE AS SHOWN IN THE LIST) <br />
+`/project show <project name>`: Know more about a specific project (PROJECT NAME SHOULD BE PRECISELY ACCURATE AS SHOWN IN THE LIST) <br />
 
 
 
